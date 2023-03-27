@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uno.ControllerGame">
+   <children>
+      <ImageView fx:id="card2" fitHeight="150.0" fitWidth="134.0" layoutX="448.0" layoutY="538.0" onMouseClicked="#setActiveCard" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Cartas/UNO_WILD_CHANGE.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Deck" fitHeight="150.0" fitWidth="200.0" layoutX="30.0" layoutY="556.0" onMouseClicked="#Draw" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="card3" fitHeight="150.0" fitWidth="200.0" layoutX="556.0" layoutY="538.0" onMouseClicked="#setActiveCard" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Cartas/UNO_GREEN_DRAW2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="card4" fitHeight="150.0" fitWidth="200.0" layoutX="661.0" layoutY="538.0" onMouseClicked="#setActiveCard" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Cartas/UNO_BLUE_7.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="card1" fitHeight="150.0" fitWidth="200.0" layoutX="340.0" layoutY="538.0" onMouseClicked="#setActiveCard" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Cartas/UNO_YELLOW_REVERSE.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="card5" fitHeight="150.0" fitWidth="200.0" layoutX="764.0" layoutY="538.0" onMouseClicked="#setActiveCard" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Cartas/UNO_RED_SKIP.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ActiveCard" fitHeight="201.0" fitWidth="166.0" layoutX="539.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="113.0" layoutX="14.0" layoutY="292.0">
+         <image>
+            <Image url="@ICON_USER.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="162.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="162.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="162.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="162.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="113.0" layoutX="544.0" layoutY="31.0">
+         <image>
+            <Image url="@ICON_USER.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="113.0" layoutX="1073.0" layoutY="292.0">
+         <image>
+            <Image url="@ICON_USER.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="980.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="980.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="560.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="642.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="481.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <TextArea disable="true" layoutX="939.0" layoutY="538.0" prefHeight="150.0" prefWidth="221.0" text="El juego inicia, turno del Jugador 4!&#10;Jugador 4 coloca +4 (Azul)!&#10;" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1073.0" layoutY="268.0" prefHeight="17.0" prefWidth="113.0" text="Jugador 4" textAlignment="CENTER" />
+      <Label alignment="CENTER" layoutX="546.0" layoutY="14.0" prefHeight="17.0" prefWidth="113.0" text="Jugador 2" />
+      <Label alignment="CENTER" layoutX="14.0" layoutY="266.0" prefHeight="17.0" prefWidth="113.0" text="Jugador 3" />
+      <Button fx:id="TomaCarta" layoutX="30.0" layoutY="524.0" mnemonicParsing="false" onAction="#DrawUnchingo" prefHeight="25.0" prefWidth="97.0" text="Tomar Cartas" />
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="980.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="980.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="400.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="721.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="80.0" layoutX="162.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@Cartas/UNO_BACKSIDE.png" />
+         </image>
+      </ImageView>
+      <MenuButton layoutX="21.0" layoutY="24.0" mnemonicParsing="false" text="Menu">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </MenuButton>
+      <Label fx:id="LblP3Hand" layoutX="30.0" layoutY="404.0" text="Cartas: " />
+      <Label fx:id="LblP2Hand" layoutX="659.0" layoutY="28.0" text="Cartas: " />
+      <Label fx:id="LblP4Hand" layoutX="1073.0" layoutY="406.0" text="Cartas: " />
+   </children>
+</AnchorPane>
