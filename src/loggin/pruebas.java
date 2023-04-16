@@ -16,6 +16,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -56,7 +65,44 @@ public class pruebas {
         Object evt = event.getSource();
         if (evt.equals(btnLogin)) {
             if (!txtUser.getText().isEmpty() && !txtPassword.getText().isEmpty()) {//chyeca si esta vacio (si es diferente de vacio)
-                String user = txtUser.getText();
+                String username = txtUser.getText();
+                String password = txtPassword.getText();
+                try {
+                    // Conectar a la base de datos
+                    Connection conn = DatabaseUtil.getConnection();
+
+                    // Verificar si existe un usuario con el nombre de usuario y contraseña ingresados
+                    PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM usuarios WHERE username=? AND password=?");
+                    pstmt.setString(1, username);
+                    pstmt.setString(2, password);
+                    ResultSet rs = pstmt.executeQuery();
+
+                    // Si existe un usuario, mostrar mensaje de éxito y cerrar la ventana de login
+                    if (rs.next()) {
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Login exitoso");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Bienvenido, " + username + "!");
+                        alert.showAndWait();
+                        txtUser.getScene().getWindow().hide();
+                    } else {
+                        // Si no existe un usuario, mostrar mensaje de error
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Error de login");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Nombre de usuario o contraseña incorrectos.");
+                        alert.showAndWait();
+                    }
+
+                    // Cerrar la conexión y liberar los recursos
+                    rs.close();
+                    pstmt.close();
+                    conn.close();
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                /*String user = txtUser.getText();
                 String pass = txtPassword.getText();
                 System.out.println("Usuario " + user + "\n" + "Contraseña " + pass);
                 //int state=model.login(user, pass);
@@ -70,6 +116,7 @@ public class pruebas {
                 //}else
                 //  JOptionPane.showMessageDialog(null,"Error al iniciar sesion, datos incorrecttos", "ADVERTENCIA",
                 //        JOptionPane.WARNING_MESSAGE);
+                 */
             }
         }
     }
@@ -79,11 +126,11 @@ public class pruebas {
         try {
 
             Parent root = FXMLLoader.load(getClass().getResource("ViewRegister.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
