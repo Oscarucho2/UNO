@@ -25,6 +25,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import loggin.LobbyController;
 
 /**
  *
@@ -61,7 +62,7 @@ public class pruebas {
     }
 
     @FXML
-    private void eventAction(ActionEvent event) {
+    private void eventAction(ActionEvent event) throws IOException {
         Object evt = event.getSource();
         if (evt.equals(btnLogin)) {
             if (!txtUser.getText().isEmpty() && !txtPassword.getText().isEmpty()) {//chyeca si esta vacio (si es diferente de vacio)
@@ -84,6 +85,8 @@ public class pruebas {
                         alert.setHeaderText(null);
                         alert.setContentText("Bienvenido, " + username + "!");
                         alert.showAndWait();
+                        LobbyController lobby = new LobbyController();
+                        lobby.muestraLobby(event);
                         txtUser.getScene().getWindow().hide();
                     } else {
                         // Si no existe un usuario, mostrar mensaje de error
@@ -102,21 +105,6 @@ public class pruebas {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                /*String user = txtUser.getText();
-                String pass = txtPassword.getText();
-                System.out.println("Usuario " + user + "\n" + "Contraseña " + pass);
-                //int state=model.login(user, pass);
-                //if(state!=-1)
-                //  if(state==1){
-                //    JOptionPane.showMessageDialog(null, "Datos correctamente ingresados");
-                //loadStage("ViewPrincipal",event);//manda a llamar principal
-                //}else
-                //  JOptionPane.showMessageDialog(null,"Error al iniciar sesion, datos incorrectos",
-                //        "ADVERTENCIA", JOptionPane.ERROR_MESSAGE);
-                //}else
-                //  JOptionPane.showMessageDialog(null,"Error al iniciar sesion, datos incorrecttos", "ADVERTENCIA",
-                //        JOptionPane.WARNING_MESSAGE);
-                 */
             }
         }
     }
@@ -135,4 +123,5 @@ public class pruebas {
             e.printStackTrace();
         }
     }
+
 }
