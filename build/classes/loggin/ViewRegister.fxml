@@ -54,15 +54,17 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Button fx:id="btnRegister" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#eventAction" prefHeight="76.0" prefWidth="293.0" text="Registrarse">
+            <Button fx:id="btnRegister1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#eventAction" prefHeight="76.0" prefWidth="293.0" text="Registrarse">
                <font>
                   <Font size="15.0" />
                </font>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
             </Button>
          </children>
       </VBox>
+      <Button fx:id="btnback" layoutX="14.0" layoutY="30.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#backLoggin" prefHeight="3.0" prefWidth="94.0" text="Regresar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
