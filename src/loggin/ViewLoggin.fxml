@@ -16,14 +16,14 @@
 
 <HBox prefHeight="504.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loggin.pruebas">
    <children>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="427.0" HBox.hgrow="ALWAYS">
+      <VBox fx:id="btnregister" alignment="CENTER" prefHeight="200.0" prefWidth="427.0" HBox.hgrow="ALWAYS">
          <children>
             <Label text="Inicia Sesión">
                <font>
                   <Font size="40.0" />
                </font>
             </Label>
-            <VBox alignment="BASELINE_CENTER" prefHeight="200.0" prefWidth="367.0">
+            <VBox alignment="BASELINE_CENTER" prefHeight="239.0" prefWidth="293.0">
                <children>
                   <Label text="Usuario">
                      <font>
@@ -51,13 +51,18 @@
                         <Font size="18.0" />
                      </font>
                   </PasswordField>
-                  <Button fx:id="btnLogin" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#eventAction" prefHeight="157.0" prefWidth="367.0" text="Ingresar">
+                  <Button fx:id="btnLogin" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#eventAction" prefHeight="76.0" prefWidth="293.0" text="Ingresar">
                      <font>
                         <Font size="15.0" />
                      </font>
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnregister" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#eventRegister" prefHeight="76.0" prefWidth="293.0" text="Registrarse">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
                   </Button>
                </children>
                <VBox.margin>

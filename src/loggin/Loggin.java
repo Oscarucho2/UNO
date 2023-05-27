@@ -15,25 +15,39 @@ import javafx.stage.Stage;
  *
  * @author miguel
  */
-public class Loggin extends Application{
+public class Loggin extends Application {
+
+    private Stage primaryStage;
+    private FXMLLoader loader;
 
     @Override
-    public void start(Stage primaryStage) throws IOException
-    {try{
-                
-        Parent root= FXMLLoader.load(getClass().getResource("ViewLoggin.fxml"));
-        Scene scene= new Scene(root);
-        primaryStage.setScene(scene);//loader scebe 
-        primaryStage.show();//show scene
-        
-        
-    }catch(Exception e){
-           e.printStackTrace();
-       } 
-        
+    public void start(Stage primaryStage) throws IOException {
+        try {
+            this.primaryStage = primaryStage;
+            this.loader = new FXMLLoader(getClass().getResource("ViewLoggin.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     
-    public static void main(String [] args ){
+      public void showNewWindow() throws IOException {
+        FXMLLoader newLoader = new FXMLLoader(getClass().getResource("ViewLoggin.fxml"));
+        Parent newRoot = newLoader.load();
+        Scene newScene = new Scene(newRoot);
+        Stage newStage = new Stage();
+        newStage.setScene(newScene);
+        newStage.show();
+    }
+          public void showMainWindow() {
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
         launch(args);
     }
+
 }
